@@ -127,7 +127,7 @@ The post-processing involving a symmetric CCD and morphologies can be applied by
 python mpunet/postprocessing/symmetric_separtor.py  
 ```
 The parameter ```pairs``` should be a list of tuples where each tuple contains the class label of symmetric 
-classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents left femur, right femur, left pelvis, and right pelvis respectively.
+classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, right femur), (left pelvis, right pelvis) respectively.
 
 ### Evaluate to get DICE, GapDICE, and Hausdoff Distance, and ASSD
 The post-processed results can now be evaluated on the testing data by running
