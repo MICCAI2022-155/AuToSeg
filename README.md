@@ -124,7 +124,7 @@ images along with dice coefficient performance metrics.
 The post-processing involving a symmetric CCD and morphologies can be applied by invoking:
 
 ```
-python mpunet/postprocessing/symmetric_separtor.py  
+python mpunet/postprocessing/symmetric_separtor.py predictions_path
 ```
 The parameter ```pairs``` should be a list of tuples where each tuple contains the class label of symmetric 
 classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, right femur), (left pelvis, right pelvis) respectively.
@@ -133,7 +133,7 @@ classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, rig
 The post-processed results can now be evaluated on the testing data by running
 
 ```
-python mpunet/evaluate/compute_metrics.py 
+python mpunet/evaluate/compute_metrics.py labels_path predictions_path
 ```
 
 This will print the mean and standard deviation for the 4 metrics, as well as generate .csv files for the score for each image. You can use simple a script or

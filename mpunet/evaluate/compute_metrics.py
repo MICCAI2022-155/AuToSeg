@@ -15,6 +15,7 @@ from skimage.morphology import (erosion, dilation, opening, closing, binary_clos
                                 area_closing,
                                 white_tophat, remove_small_holes)
 
+import sys
 
 def extract_surface_morph(img, radius=1, bg_val=0):
     res = np.zeros(img.shape, dtype=np.uint8)
@@ -103,11 +104,15 @@ def only_compute_distance(pred_path):
 if __name__ == '__main__':
 
 
-    label_root = '/Users/px/GoogleDrive/MultiPlanarUNet/data_folder/validation_labels/val'
+    # label_root = '/Users/px/GoogleDrive/MultiPlanarUNet/data_folder/validation_labels/val'
 
-    pred_root = '/Users/px/GoogleDrive/MultiPlanarUNet/pred_traing_w_2/no_weight_2_2/ccd_symmetric'
+    # pred_root = '/Users/px/GoogleDrive/MultiPlanarUNet/pred_traing_w_2/no_weight_2_2/ccd_symmetric'
 
-    save_path = 'no_weight22.csv'
+    label_root = sys.argv[1]
+
+    pred_root = sys.argv[2]
+
+    save_path = 'res.csv'
 
     assd = 0
     hausdorff_single = 0
@@ -221,40 +226,3 @@ if __name__ == '__main__':
 
     print(dice_gap, end='\t')
     print(hausdorff_list)
-
-    # root_path = '/Users/px/Downloads/predictions_0928/nii_files'
-    #
-    # assd_path = os.path.join(root_path, 'assd_symmetric')
-    #
-    # if not os.path.exists(assd_path):
-    #     os.mkdir(assd_path)
-    #
-    # img_path_1 = '/Users/px/GoogleDrive/MultiPlanarUNet/data_folder/hip_val_0930/labels/a70_image_cropped.nii'
-    # img_path_2 = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/gap_predictions_internal/ccd_symmetric/morph/a70_image_cropped_PRED.nii.gz'
-    # # img_path_2 = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/gap_predictions_internal/a70_image_cropped_PRED.nii.gz'
-    # img_path_2 = '/Users/px/Downloads/predictions_ccd/nii_files/a70_image_cropped_PRED.nii.gz'
-    #
-    # save_path_1 = '/Users/px/GoogleDrive/MultiPlanarUNet/data_folder/hip_val_0930/labels/assd_a70_image_cropped.nii'
-    # save_path_2 = '/Users/px/GoogleDrive/' \
-    #               'MultiPlanarUNet/ubuntu_predictions/gap_predictions_internal/ccd_symmetric/morph/assd_a70_image_cropped_PRED.nii.gz'
-    #
-    # save_path_2 = '/Users/px/Downloads/predictions_ccd/nii_files/assd_a70_image_cropped_PRED.nii.gz'
-
-#
-#
-#     img = extract_surface_morph(img, radius=3, bg_val=0)
-#
-#     img2 = extract_surface_morph(img2, radius=3, bg_val=0)
-#
-#     distances_1, distances_2 = assd_surface(img, img2)
-#
-#     ni_img = nib.Nifti1Image(distances_1.astype(np.uint8)
-#                              , affine_1)
-#
-#     nib.save(ni_img, save_path_1)
-#
-#     ni_img = nib.Nifti1Image(distances_2.astype(np.uint8)
-#                              , affine_2)
-#
-#     nib.save(ni_img, save_path_2)
-# #
