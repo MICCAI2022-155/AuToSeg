@@ -126,6 +126,9 @@ The post-processing involving a symmetric CCD and morphologies can be applied by
 ```
 python mpunet/postprocessing/symmetric_separtor.py predictions_path
 ```
+
+predictions_path is the path to the model output after you run the previous ```mp predict ```
+
 The parameter ```pairs``` should be a list of tuples where each tuple contains the class label of symmetric 
 classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, right femur), (left pelvis, right pelvis) respectively.
 
@@ -135,6 +138,6 @@ The post-processed results can now be evaluated on the testing data by running
 ```
 python mpunet/evaluate/compute_metrics.py labels_path predictions_path
 ```
-
+labels_path and predictions_path are the folder including the path to the label of your test data and path to the label to your model predictions (either with or without post_processing). 
 This will print the mean and standard deviation for the 4 metrics, as well as generate .csv files for the score for each image. You can use simple a script or
 Excel functions to get the mean and std of the overall performance
