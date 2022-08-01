@@ -139,5 +139,5 @@ The post-processed results can now be evaluated on the testing data by running
 python mpunet/evaluate/compute_metrics.py labels_path predictions_path
 ```
 labels_path and predictions_path are the folder including the path to the label of your test data and path to the label to your model predictions (either with or without post_processing). 
-This will print the mean and standard deviation for the 4 metrics, as well as generate .csv files for the score for each image. You can use simple a script or
+This will print the mean and standard deviation for the 4 metrics, as well as generate a res.csv files where each row corresponds to the score for each image. You can use simple a script or
 Excel functions to get the mean and std of the overall performance
