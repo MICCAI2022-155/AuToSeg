@@ -20,7 +20,7 @@ But make sure you clone from this repository.
 ##  Hip-Joints Specific Pipeline with Transfer and Interative learning
 Here we present the pipeline mentioned in our paper.
 
-![](pipeline.png)
+![](figures/pipeline.png)
 
 ### Initializing two projects, one for pretraining in public data, and one for fine-tuning as follows:
 
@@ -121,7 +121,7 @@ images
 
 
 ### Post-Processing
-The post-processing involving a symmetric CCD and morphologies can be applied by invoking:
+The learnt rotational equivalence may cause problems for symmetric classes, this can be solved by the post-processing involving a symmetric CCD and morphologies by invoking:
 
 ```
 python mpunet/postprocessing/symmetric_separtor.py predictions_path
@@ -130,7 +130,10 @@ python mpunet/postprocessing/symmetric_separtor.py predictions_path
 predictions_path is the path to the model output after you run the previous ```mp predict ```
 
 The parameter ```pairs``` should be a list of tuples where each tuple contains the class label of symmetric 
-classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, right femur), (left pelvis, right pelvis) respectively.
+classes. In our case,  ```pairs=[(1, 2), (3, 4)] ``` represents (left femur, right femur), (left pelvis, right pelvis) respectively. The figure below shows the effect
+
+![](figures/wo_post.png)
+
 
 ### Evaluate to get DICE, GapDICE, and Hausdoff Distance, and ASSD
 The post-processed results can now be evaluated on the testing data by running
@@ -153,3 +156,5 @@ python mpunet/postprocessing/active_weight_map.py predictions_path
 
 predictions_path is the path to the model output (either with or without post_processing). This will create a new subfolder inside the ```predictions_path``` with binary nii files corresponding to the collision regions. This can be used as a guideline for (inter)active learning. It will also compute the total average area of such region. This can be a metric for model performance without ground truth (the smaller the better). 
 
+
+![](figures/before_after_v3 copy.png)
