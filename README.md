@@ -157,4 +157,4 @@ python mpunet/postprocessing/active_weight_map.py predictions_path
 predictions_path is the path to the model output (either with or without post_processing). This will create a new subfolder inside the ```predictions_path``` with binary nii files corresponding to the collision regions. This can be used as a guideline for (inter)active learning. It will also compute the total average area of such region. This can be a metric for model performance without ground truth (the smaller the better). 
 
 
-![](figures/before_after_v3 copy.png)
+![](figures/before_after_v3.png)
