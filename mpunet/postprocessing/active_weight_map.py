@@ -27,12 +27,11 @@ if __name__ == '__main__':
 
     thresh = 2
 
-    path1 = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/only_shitty/ccd_symmetric'
-
-    # path1 = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/all/all'
-
-    path1 = '/Users/px/GoogleDrive/MultiPlanarUNet/my_hip_project_continue_f_external2/predictions_0902/nii_files/ccd/morph'
-
+    if len(sys.argv) == 0:
+        path1 = '/Users/px/GoogleDrive/MultiPlanarUNet/my_hip_project_continue_f_external2/predictions_0902/nii_files/ccd/morph'
+    else:
+        path1 = sys.argv[1]
+        
     save = os.path.join(os.path.dirname(path1), f'active_weight_map_{thresh}')
 
     region_sums = []
@@ -56,20 +55,3 @@ if __name__ == '__main__':
 
     print(f'mean = {np.mean(region_sums)}')
     print(f'std = {np.std(region_sums)}')
-    #
-    # path = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/all/active_weight_map'
-    # path = '/Users/px/GoogleDrive/MultiPlanarUNet/ubuntu_predictions/only_shitty/active'
-    #
-    # region_sums = []
-    # for i in os.listdir(path):
-    #     if i.startswith('.'): continue
-    #     p = os.path.join(path, i)
-    #     img = nib.load(p)
-    #     affine = img.affine
-    #     img = img.get_fdata()
-    #     img = img.astype(np.uint8)
-    #     print(f'on {i} = {np.sum(img)}')
-    #     region_sums.append(np.sum(img))
-    #
-    # print(f'mean = {np.mean(region_sums)}')
-    # print(f'std = {np.std(region_sums)}')
