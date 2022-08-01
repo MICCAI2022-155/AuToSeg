@@ -116,8 +116,8 @@ note that the ```--sum_fusion``` tag is essential since we are not training
 another fusion model. ```--by_radius``` tage is also essential in ensuring different sampling strategy during training
 and testing to avoid incomplete boundaries, as mentioned in the paper.
 
-This will create a folder ```my_project/predictions``` storing the predicted 
-images along with dice coefficient performance metrics.
+This will create a folder ```my_finetune_project/predictions``` storing the predicted 
+images
 
 
 ### Post-Processing
