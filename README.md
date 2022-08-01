@@ -142,6 +142,8 @@ labels_path and predictions_path are the folder including the path to the label 
 This will print the mean and standard deviation for the 4 metrics, as well as generate a res.csv files where each row corresponds to the score for each image. You can use simple a script or
 Excel functions to get the mean and std of the overall performance
 
+The GapDICE calculation will also store the generated gap region. Sample gap regions can be found in ```gap_regions_1```
+
 ### Collision Detection / Evaluate without ground truth 
 To compute the regions corrsponding to Eq. 2 in the paper, run
 
@@ -151,4 +153,3 @@ python mpunet/postprocessing/active_weight_map.py predictions_path
 
 predictions_path is the path to the model output (either with or without post_processing). This will create a new subfolder inside the ```predictions_path``` with binary nii files corresponding to the collision regions. This can be used as a guideline for (inter)active learning. It will also compute the total average area of such region. This can be a metric for model performance without ground truth (the smaller the better). 
 
-sample outputs from the active_weight_map can be found in ```gap_regions_1```
