@@ -159,7 +159,7 @@ predictions_path is the path to the model output (either with or without post_pr
 
 ![](figures/before_after_v3.png)
 
-#Final Finite Element Model
+# Final Finite Element Model
 
 Much of the motivation of this project is under a larger project LibHip - A Hip Joint Finite Element Model Repository https://github.com/diku-dk/libhip
 
