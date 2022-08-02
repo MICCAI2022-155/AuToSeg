@@ -158,3 +158,9 @@ predictions_path is the path to the model output (either with or without post_pr
 
 
 ![](figures/before_after_v3.png)
+
+#Final Finite Element Model
+
+Much of the motivation of this project is under a larger project LibHip - A Hip Joint Finite Element Model Repository https://github.com/diku-dk/libhip
+
+The auto segmentation of hip joints is the essential first step for patient-specific hip joint finite element model for simulation studies. The segmentation results is under the folder ```RawSegment```. The cleaning and remeshing can be applied automatically. Please refer to the CartiGen and later folders for the generated cartilage from segmentaion and the simulation results.
