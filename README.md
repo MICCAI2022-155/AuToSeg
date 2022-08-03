@@ -13,7 +13,12 @@ Pre-print version: [https://arxiv.org/abs/1911.01764](https://arxiv.org/abs/1911
 
 Published version: [https://doi.org/10.1007/978-3-030-32245-8_4](https://doi.org/10.1007/978-3-030-32245-8_4)#
 
-But make sure you clone from this repository.
+## Installation
+Make sure you clone from this repository, and then run
+
+```
+pip install -e MultiPlanarUNet
+```
 
 ---
 
