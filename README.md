@@ -57,11 +57,10 @@ Make sure you change ```xxx``` according to the .h5 file generated from pretrain
 
 ### Fine-tuning with weight_map loss
 To fine-tune with the weight_map loss, make sure you first compute the weight_map based on the labels of 
-your training data. You can compute and store them by invoking the following command, but make sure you 
-have modified the path to your fine-tuning dataset. You can also change the hyperparameters 
-(std and erosion radius in the ```__main__``` function) 
+your training data. You can compute and store them by invoking the following command, ```data_folder``` should be the root path to your fine-tuning dataset. You can also change the hyperparameters 
+(std and erosion radius defined in the ```__main__``` function) 
 ```
-python mpunet/preprocessing/weight_map.py
+python mpunet/preprocessing/weight_map.py data_folder
 ```
 
 After the weight maps are stored on disk, you can fine-tune with weight_map loss by invoking
