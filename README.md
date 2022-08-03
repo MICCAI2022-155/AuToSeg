@@ -33,7 +33,7 @@ Here we present the pipeline mentioned in our paper.
 # Initialize a project for pretraining
 mp init_project --name my_pretraining_project --data_dir ./pretraining_data_folder
 # Initialize a project for pretraining
-mp init_project --name my_finetune_project --data_dir ./fineune_data_folder
+mp init_project --name my_finetune_project --data_dir ./finetune_data_folder
 ```
 
 The YAML file named ```train_hparams.yaml```, which stores all hyperparameters will also be 
@@ -62,10 +62,10 @@ Make sure you change ```xxx``` according to the .h5 file generated from pretrain
 
 ### Fine-tuning with weight_map loss
 To fine-tune with the weight_map loss, make sure you first compute the weight_map based on the labels of 
-your training data. You can compute and store them by invoking the following command, where ```fineune_data_folder``` should be the root path to your fine-tuning dataset. You can also change the hyperparameters 
+your training data. You can compute and store them by invoking the following command, where ```finetune_data_folder``` should be the root path to your fine-tuning dataset. You can also change the hyperparameters 
 (std and erosion radius defined in the ```__main__``` function) 
 ```
-python mpunet/preprocessing/weight_map.py fineune_data_folder
+python mpunet/preprocessing/weight_map.py finetune_data_folder
 ```
 
 After the weight maps are stored on disk, you can fine-tune with weight_map loss by invoking
@@ -165,3 +165,5 @@ predictions_path is the path to the model output (either with or without post_pr
 Much of the motivation of this project is under a larger project: LibHip - A Hip Joint Finite Element Model Repository available at https://github.com/diku-dk/libhip
 
 The auto segmentation of hip joints is the essential first step to generate patient-specific hip joint finite element model for simulation studies. The segmentation results is under the folder ```RawSegment```. The cleaning and remeshing can be applied automatically. Please refer to the CartiGen and later folders for the generated cartilage from segmentaion and the simulation results.
+
+[![]https://user-images.githubusercontent.com/45920627/180701601-8415f976-7371-4429-b9e8-281d793dc5c2.png](https://github.com/diku-dk/libhip)
