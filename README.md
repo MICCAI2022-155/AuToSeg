@@ -93,8 +93,6 @@ cd my_finetune_project
 mp train --num_GPUs=1 --continue --distance_loss --force_GPU=0 \
 --distance_map_folder weight_maps 
 ```
-Make sure you change ```xxx``` according to the .h5 file generated from pretraining step 
-
 
 
 ### Predict
