@@ -75,7 +75,7 @@ Make sure you change ```xxx``` according to the .h5 file generated from pretrain
 
 
 ### Interative Fine-tuning
-To do Interative fine-tuning with the weight_map loss, make sure you first put the new training dataset to the data_dir, then modify the label path in your ```train_hparams.yaml``` file.
+To do Interative fine-tuning with the weight_map loss, make sure you first put the new training dataset to the data_dir, then modify the ```base_dir``` under the entry ```train_data``` in your ```train_hparams.yaml``` file.
 then compute the weight_map based on the labels of 
 your newly added training data. You can compute and store them by invoking the following command, where ```fineune_data_folder``` should be the root path to your newly added training data. You can also change the hyperparameters 
 (std and erosion radius in the ```__main__``` function) 
