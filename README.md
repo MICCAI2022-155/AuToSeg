@@ -166,4 +166,4 @@ Much of the motivation of this project is under a larger project: LibHip - A Hip
 
 The auto segmentation of hip joints is the essential first step to generate patient-specific hip joint finite element model for simulation studies. The segmentation results is under the folder ```RawSegment```. The cleaning and remeshing can be applied automatically. Please refer to the CartiGen and later folders for the generated cartilage from segmentaion and the simulation results.
 
-[![]https://user-images.githubusercontent.com/45920627/180701601-8415f976-7371-4429-b9e8-281d793dc5c2.png](https://github.com/diku-dk/libhip)
+[![f]https://user-images.githubusercontent.com/45920627/180701601-8415f976-7371-4429-b9e8-281d793dc5c2.png](https://github.com/diku-dk/libhip)
