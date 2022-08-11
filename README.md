@@ -8,7 +8,7 @@ Mathias Perslev, Erik Dam, Akshay Pai, and Christian Igel. One Network To
 Segment Them All: A General, Lightweight System for Accurate 3D Medical Image
 Segmentation. In: Medical Image Computing and Computer Assisted Intervention 
 (MICCAI), 2019
-
+ 
 Pre-print version: [https://arxiv.org/abs/1911.01764](https://arxiv.org/abs/1911.01764)
 
 Published version: [https://doi.org/10.1007/978-3-030-32245-8_4](https://doi.org/10.1007/978-3-030-32245-8_4)#
@@ -143,7 +143,7 @@ The post-processed results can now be evaluated on the testing data by running
 python mpunet/evaluate/compute_metrics.py labels_path predictions_path
 ```
 labels_path and predictions_path are the folder including the path to the label of your test data and path to the label to your model predictions (either with or without post_processing). 
-This will print the mean and standard deviation for the 4 metrics, as well as generate a res.csv files where each row corresponds to the score for each image. You can use simple a script or
+This will print the mean and standard deviation for the 4 metrics, as well as generate a res.csv files where each row corresponds to the score for each image. You may then use simple a script or
 Excel functions to get the mean and std of the overall performance
 
 The GapDICE calculation will also store the generated gap region. Sample gap regions can be found in ```gap_regions_1```
@@ -155,7 +155,7 @@ To compute the regions corrsponding to Eq. 2 in the paper, run
 python mpunet/postprocessing/active_weight_map.py predictions_path
 ```
 
-predictions_path is the path to the model output (either with or without post_processing). This will create a new subfolder inside the ```predictions_path``` with binary nii files corresponding to the collision regions. This can be used as a guideline for (inter)active learning. It will also compute the total average area of such region. This can be a metric for model performance without ground truth (the smaller the better). 
+predictions_path is the path to the model output (either with or without post_processing). This will create a new subfolder inside the ```predictions_path``` saving binary nifty images corresponding to the collision regions. This can be used as a guideline for (inter)active learning. It will also compute the total average area of such region. This can be a metric for model performance without ground truth (the smaller the better). 
 
 
 ![](figures/before_after_v3.png)
