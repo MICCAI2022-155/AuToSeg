@@ -1,4 +1,10 @@
-# Implementation of Paper Hip-Joints AutoSeg at Medical Image Learning with Limited and Noisy Data (MICCAI Workshop)
+# Implementation of Paper Hip-Joints AutoSeg
+
+Accepted in Medical Image Learning with Limited and Noisy Data (MICCAI Workshop)
+
+Pre-print version: [https://arxiv.org/abs/2208.08226](https://arxiv.org/abs/2208.08226)
+
+Published version: Waiting camera-ready, hopefully ready in Sepetmber
 
 ##  Multi-Planar U-Net
 Most of the repository is based on the official implemenation of original Multi-Planar U-Net.
