@@ -4,7 +4,7 @@ Accepted in Medical Image Learning with Limited and Noisy Data (MICCAI Workshop)
 
 Pre-print version: [https://arxiv.org/abs/2208.08226](https://arxiv.org/abs/2208.08226)
 
-Published version: Waiting camera-ready, hopefully ready in Sepetmber
+Published version: https://link.springer.com/chapter/10.1007/978-3-031-16760-7_15
 
 ##  Multi-Planar U-Net
 Most of the repository is based on the official implemenation of original Multi-Planar U-Net.
